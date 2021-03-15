@@ -10,6 +10,17 @@ div
 
 <script>
 export default {
+  async asyncData({ $axios }) {
+    const [votingsRes] = await Promise.all([
+      $axios.$get(
+        'https://ag.nn.rusatom.dev/api/votings?per_page=12&sort[updated_at]=desc'
+      ),
+    ])
+    return {
+      listDATA: votingsRes.data,
+    }
+  },
+
   data() {
     return {
       postParams: {

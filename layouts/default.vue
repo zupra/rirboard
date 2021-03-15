@@ -200,7 +200,7 @@ export default {
     background #FFF
   &_body
     grid-area: body;
-    margin-left 1rem
+    margin 1rem
 
   &_sidebar,
   &_body

@@ -11,7 +11,8 @@ client-only
         img(
           src="https://icongr.am/clarity/eye-hide.svg?size=32&color=505fd3"
         )
-      button.btn_open(
+      // button.btn_open
+      a-button.my-1(
         @click="open = !open"
       ) {{ open ? 'скрыть API' : 'показать API'}}
     .preBlock(
@@ -35,10 +36,13 @@ export default {
 <style lang="stylus" scoped>
 
 .PreData
-  background-color: #f4f6f8;
+  background-color: #FFF //#f4f6f8;
+
   &_hide
     cursor pointer
 
+
+/*
 .btn_open
   btn()
   // display: inline-block;
@@ -55,7 +59,7 @@ export default {
     border-color: currentColor;
     background-color: white;
     // box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.5), 0 0 0 1.5px rgba(255, 105, 180, 0.5);
-
+*/
 
 .preBlock
   background: rgba(#000, .15);
