@@ -4,8 +4,7 @@ h1 Отчеты
 
 <script>
 export default {
-  name: "index",
-  layout: 'likeAdesign'
+  name: "index"
 }
 </script>
 

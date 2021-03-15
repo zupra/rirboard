@@ -4,8 +4,7 @@ h1 Заявки
 
 <script>
 export default {
-  name: "index",
-  layout: 'likeAdesign'
+  name: "index"
 }
 </script>
 

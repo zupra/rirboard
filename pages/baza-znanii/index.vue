@@ -4,8 +4,7 @@ h1 База Знанний
 
 <script>
 export default {
-  name: "index",
-  layout: 'likeAdesign'
+  name: "index"
 }
 </script>
 
