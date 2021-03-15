@@ -29,7 +29,22 @@ export default {
   plugins: ['@/plugins/antd-ui'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+ /*
+   ** Auto import components
+   ** See https://nuxtjs.org/api/configuration-components
+      // https://github.com/Krutie/nuxt-components-demo/blob/master/nuxt.config.js
+      // https://ru.nuxtjs.org/blog/improve-your-developer-experience-with-nuxt-components/#lazy-loading-your-components
+   */
+  // components: true,
+  components: [
+    '~/components', // shortcut to { path: '~/components' }
+    {
+      path: '~/components/slider/',
+      prefix: 'Slider',
+      ignore: ['**/*.js'],
+    }
+  ],
+  
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
