@@ -6,7 +6,12 @@ h1 HELLO
 <script>
 export default {
   data() {
-    return {}
+    return {
+      postParams: {
+        // ...makeBaseParams(),
+        ...(this.$route.query ? this.$route.query : {}),
+      },
+    }
   },
 }
 </script>
