@@ -1,5 +1,10 @@
 <template lang="pug">
-h1 HELLO
+
+div
+  h1 HELLO
+
+  PreData
+    pre {{$data}}
 
 </template>
 
