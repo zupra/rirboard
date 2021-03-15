@@ -3,8 +3,8 @@
 div
   h1 HELLO
 
-  PreData
-    pre {{$data}}
+  //PreData
+  //  pre {{$data}}
 
 </template>
 

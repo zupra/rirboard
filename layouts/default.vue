@@ -3,57 +3,27 @@
   aside.app-main-sidebar-aside.flex_col.x_sb
     div
       h1.app-main-sidebar-aside__title Цифровое теплоснабжение
-      nav.app-main-sidebar-aside__nav
-        ul
-          li(
-            v-for="(It, idx) in links"
-            :key="idx"
-          )
-            nuxt-link(
-              :to="It.link"
-            )
-              img(:src="It.img")
-              span {{ It.name }}
-    img(src="~/static/icon/rir-logo.svg")
+      MainAside
+    img.rir-aside-logo(src="~/static/icon/rir-logo.svg")
   main.app-content-part
     <nuxt />
 </template>
 
 <script>
+import MainAside from "~/components/MainAside";
 export default {
   name: 'LikeAdesign',
-  data() {
-    return {
-      links: [
-        {
-          name: 'Дашборд',
-          img: '',
-          link: '/dashboard',
-        },
-        {
-          name: 'Отчеты',
-          img: '',
-          link: '/otchety',
-        },
-        {
-          name: 'База знаний',
-          img: '',
-          link: '/baza-znanii',
-        },
-        {
-          name: 'Оплата',
-          img: '',
-          link: '/oplata'
-        },
-        {
-          name: 'Заявки',
-          img: '',
-          link: '/zayavki',
-        },
-      ],
-    }
-  },
+  components: {
+    MainAside
+  }
 }
 </script>
 
-<style scoped lang="stylus"></style>
+<style scoped lang="stylus">
+.rir-aside-logo
+  padding-left: 32px;
+  padding-right: 32px;
+  width: 224px;
+  height: 40px;
+  display: block;
+</style>
