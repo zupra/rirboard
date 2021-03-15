@@ -2,8 +2,8 @@
 #layout
   // SIDEBAR
   a-layout-sider#layout_sidebar(
-    v-model="collapsed" 
-    :trigger="null" 
+    v-model="collapsed"
+    :trigger="null"
     collapsible
   )
     //-
@@ -27,14 +27,14 @@
 
 
 
-      
+
 
 
 
       //-
         a-sub-menu(
           key="sub1"
-        ) 
+        )
           span(
             slot="title"
           )
@@ -49,14 +49,14 @@
       //-
         template(v-for='item in list')
           a-menu-item(
-            v-if='!item.children', 
+            v-if='!item.children',
             :key='item.key'
           )
             a-icon(type='pie-chart')
             span {{ item.title }}
           sub-menu(
-            v-else, 
-            :key='item.key', 
+            v-else,
+            :key='item.key',
             :menu-info='item'
           )
 
@@ -69,17 +69,20 @@
         :key='`1+${idx}`'
         to='/#'
       )
-        a-icon(
-          :type='It.icon'
-          :style="{ fontSize: '22px' }"
+        nuxt-link(
+          :to="It.name"
         )
-        span {{ It.name }}
+          a-icon(
+            :type='It.icon'
+            :style="{ fontSize: '22px' }"
+          )
+          span {{ It.name }}
 
   // HEADER
   #layout_header
     a-icon.trigger(:type="collapsed ? 'menu-unfold' : 'menu-fold'", @click='() => (collapsed = !collapsed)')
-  
-    
+
+
   // BODY
   #layout_body
     <nuxt />
