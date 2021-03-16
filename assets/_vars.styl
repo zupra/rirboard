@@ -1,3 +1,69 @@
+$clr_titanic = #04153E
+$clr_interstellar = #133986 //
+$clr_gladiator = #092152
+$clr_alien = #81ABEE
+$clr_amelie = #fff
+
+$clr_rocky = #3D75E4
+$clr_godfather = #214EB0
+$clr_arrival = #E4EDFB
+$clr_gladiator = #091F52
+$clr_matrix = #57A003
+$clr_amadeus = #E3F3D8
+
+
+$clr_memento = #CDDFFE
+$clr_rush = #F6F9FE
+$clr_shawshank = #F6FCF3
+$clr_drive = #95C763
+$clr_fargo = #E14761
+$clr_matrix = #57A003
+$clr_lebowski = #D06E0B
+
+
+
+
+// https://fvsch.com/styling-buttons
+btn()
+  // background-color: transparent;
+  // color: inherit;
+  user-select none
+  cursor: pointer;
+
+  border: none;
+  border-radius: 8px;
+
+  font: inherit;
+  font-weight: 500
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: all .3s
+  outline: none;
+
+  display: grid;
+  align-items: center;
+  text-align: center
+  height 40px
+  padding: 0 1rem;
+
+
+
+circle(unit)
+  width: unit;
+  height: unit;
+  border-radius: 50%;
+
+
+
+hideScrollbar()
+  -webkit-overflow-scrolling touch
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar
+    display: none
+
+
 scrollableArea()
   // height 100%
   overflow-y auto
@@ -9,15 +75,3 @@ scrollableArea()
   // ie 10+
   &
     -ms-overflow-style none
-
-
-
-
-
-.Card
-  background-color #FFF
-  border-radius: 12px;
-  padding 1em
-
-  // position relative
-  // z-index 10
