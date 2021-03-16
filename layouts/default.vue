@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import MainAside from '~/components/MainAside'
+// import MainAside from '~/components/MainAside'
 export default {
   name: 'LikeAdesign',
-  components: {
-    MainAside,
-  },
+  // components: {
+  //   MainAside,
+  // },
 }
 </script>
 
@@ -26,4 +26,26 @@ export default {
   width: 224px;
   height: 40px;
   display: block;
+
+
+
+.app-main-sidebar-aside
+  padding-top: 32px;
+  padding-bottom: 32px;
+  width 207px
+  &__title
+    padding-left: 32px;
+    padding-right: 32px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+
+.app-content-part
+  padding 2em
+  background: #F6F9FE;
+  border-radius: 48px 0px 0px 0px;
+  width 100%
+  min-height 100vh
 </style>

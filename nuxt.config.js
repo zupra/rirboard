@@ -38,11 +38,11 @@ export default {
   // components: true,
   components: [
     '~/components', // shortcut to { path: '~/components' }
-    {
-      path: '~/components/slider/',
-      prefix: 'Slider',
-      ignore: ['**/*.js'],
-    }
+    // {
+    //   path: '~/components/slider/',
+    //   prefix: 'Slider',
+    //   ignore: ['**/*.js'],
+    // }
   ],
   
 
@@ -52,10 +52,20 @@ export default {
     // '@nuxtjs/eslint-module',
     //
     '@nuxtjs/style-resources',
+    // https://tailwindcss.nuxtjs.org/
+    '@nuxtjs/tailwindcss'
   ],
   styleResources: {
     stylus: ['~/assets/_vars.styl'],
   },
+  tailwindcss: {
+    jit: true,
+    // add '~tailwind.config` alias
+    exposeConfig: true
+  },
+
+
+
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
