@@ -11,9 +11,9 @@ nav.app-main-sidebar-aside__nav
         .app-main-sidebar-aside__active-link-marker(
           :class="{'app-main-sidebar-aside__active-link_blue-marker': $route.fullPath === It.link}"
           )
-        div.app-main-sidebar-aside__link-item-content
-          img(:src="It.img")
-          span {{ It.name }}
+        div.app-main-sidebar-aside__link-item-content.flex
+          img(:src="require(`~/public/aside/${It.img}.svg`)")
+          span(style="margin-left: 13px") {{ It.name }}
 </template>
 
 <script>
@@ -27,27 +27,27 @@ export default {
       links: [
         {
           name: 'Дашборд',
-          img: '',
+          img: 'dashboard_16',
           link: '/dashboard',
         },
         {
           name: 'Отчеты',
-          img: '',
+          img: 'insert_16',
           link: '/otchety',
         },
         {
           name: 'База знаний',
-          img: '',
+          img: 'knowledge_16',
           link: '/baza-znanii',
         },
         {
           name: 'Оплата',
-          img: '',
+          img: 'payment-wallet_16',
           link: '/oplata'
         },
         {
           name: 'Заявки',
-          img: '',
+          img: 'application_16',
           link: '/zayavki',
         },
       ],
