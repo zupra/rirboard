@@ -8,14 +8,20 @@ nav.app-main-sidebar-aside__nav
       nuxt-link.app-main-sidebar-aside__link-item.flex(
         :to="It.link"
       )
-
-        img(:src="It.img")
-        span {{ It.name }}
+        .app-main-sidebar-aside__active-link-marker(
+          :class="{'app-main-sidebar-aside__active-link_blue-marker': $route.fullPath === It.link}"
+          )
+        div.app-main-sidebar-aside__link-item-content
+          img(:src="It.img")
+          span {{ It.name }}
 </template>
 
 <script>
 export default {
   name: "MainAside",
+  mounted() {
+    console.log(this.$route.fullPath)
+  },
   data() {
     return {
       links: [
@@ -52,8 +58,6 @@ export default {
 
 <style scoped lang="stylus">
 .app-main-sidebar-aside__link-item
-  padding-top: 12px
-  padding-bottom: 12px
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -63,15 +67,19 @@ export default {
   &:hover
     background: #04153E
     opacity: 0.92;
+.app-main-sidebar-aside__link-item-content
+  padding-top: 12px
+  padding-bottom: 12px
+  margin-left 28px
 .nuxt-link-active
   opacity 1
   background: #04153E
 .app-main-sidebar-aside__ul
   margin: 0
   padding: 0
-.test
+.app-main-sidebar-aside__active-link-marker
   width 4px
+  height 44px
+.app-main-sidebar-aside__active-link_blue-marker
   background #3D75E4
-  height 100%
-  margin-right 28px
 </style>
