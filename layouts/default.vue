@@ -1,6 +1,6 @@
 <template lang="pug">
 .flex
-  aside.app-main-sidebar-aside.flex_col.x_sb
+  aside.app-main-sidebar-aside.flex.flex-col.justify-between
     div
       h1.app-main-sidebar-aside__title Цифровое теплоснабжение
       MainAside
@@ -10,12 +10,8 @@
 </template>
 
 <script>
-// import MainAside from '~/components/MainAside'
 export default {
   name: 'LikeAdesign',
-  // components: {
-  //   MainAside,
-  // },
 }
 </script>
 
@@ -26,8 +22,6 @@ export default {
   width: 224px;
   height: 40px;
   display: block;
-
-
 
 .app-main-sidebar-aside
   padding-top: 32px;

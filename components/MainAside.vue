@@ -10,18 +10,16 @@ nav.MainAside
         :to="It.link"
       )
         img(:src="require(`~/public/aside/${It.img}.svg`)")
-        // TODO отступы 
+        // TODO: отступы
         // span(style="margin-left: 13px") {{ It.name }}
         .ml-3 {{ It.name }}
-
-
     li.mt-3
       N-link.MainAside__link(
         to="uzly-regulirovaniya"
       ) узлы регулирования
 
 
-        
+
 </template>
 
 <script>
