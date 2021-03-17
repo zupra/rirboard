@@ -1,0 +1,279 @@
+// @import '_el__tooltip';
+
+//sizes
+.w100-minus-pr-5
+  width calc(100% - 1.25rem)
+
+.btn,
+.btn_blue,
+.btn_red
+  btn()
+
+.btn
+  background $clr_memento
+  color: $clr_godfather //$clr_rocky
+  transition all .35s
+  &:hover
+
+    background $clr_rocky
+    color: #FFF
+
+.btn_blue
+  background $clr_rocky
+  color: #FFF
+  &:hover
+    background lighten($clr_rocky, 15%)
+
+.btn_red
+  background $clr_fargo
+  color: #FFF
+  &:hover
+    background lighten($clr_fargo, 15%)
+
+.btn_secondary
+  background $clr_arrival
+  color $clr_godfather
+  &:hover
+    background #EDF3FC
+    color $clr_godfather
+  &:active
+    background #DBE7FA
+    color $clr_godfather
+
+.btn_link
+  cursor pointer
+  color: $clr_rocky
+  user-select none
+
+
+
+
+
+
+.Tag
+  font-weight 400
+  margin .2em
+  border-radius: 1rem
+  font-size 13px
+
+  padding 0 .8rem
+
+  color #FFF
+  background $clr_alien
+
+  //FIX ellipsis
+  height 1.5rem
+  line-height 1.5rem
+  // display: grid;
+  // align-items: center;
+  // textOverflow()
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+
+
+  &.green
+    background $clr_drive
+
+  // С точкой
+  &.clicked
+    display: flex
+    cursor pointer
+    padding-left .6rem
+    &:before
+      content: '●\00a0'; //'•' // ●
+      color: rgba(#FFF, .2);
+      font-size 1.5em
+      line-height 22px
+  &.active
+    background $clr_rocky
+    &:before
+      color: #FFF !important
+
+
+
+.TAB
+  user-select none
+  margin-right 1.6rem
+  opacity .72
+  white-space: nowrap;
+
+  line-height: 1.25;
+  font-weight 500
+  &.nuxt-link-exact-active
+  &.activeTab
+    opacity 1
+    &:before
+      width: 100%;
+  sup
+    margin-left .3em
+    color $clr_rocky
+
+
+
+// Список Доп Картинок
+.mediaListOfItem
+  height 180px
+  &__img
+    filter: drop-shadow(0 1px 3px #777);
+    border-radius: 16px;
+    height 100%
+    cursor pointer
+    transition: transform .3s;
+    // filter: drop-shadow(1px 2px 2px #999);
+    &:hover
+      transform: translateY(-2px);
+
+
+
+
+
+// Кнопка-Иконка
+.CategoryIt
+  margin .5rem .3rem
+  width 120px
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  font-size .8rem
+  line-height 1.2
+  text-align center
+  &__circle
+    margin-bottom .5em
+    cursor pointer
+    circle(72px)
+    background $clr_rush
+    transition background-color .4s
+
+    &.active,
+    &:hover
+      background $clr_rocky
+      img, svg
+        filter: brightness(0) invert(1);
+    &.active
+      animation bounce 0.45s
+@keyframes bounce
+  10%,90%
+    transform: scale(1.2);
+  50%
+    transform: scale(0.7);
+
+
+
+
+.grid_switches
+  display grid
+  // grid-template-columns: repeat(auto-fit, minmax(250px, auto))
+  // grid-gap 1rem
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
+  grid-gap 2rem
+.grid_counters
+  display grid
+  // grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 3fr) 1fr)
+  grid-gap 2rem
+  //justify-content: space-between;
+  // justify-items: center;
+  div:last-child
+    flex-wrap wrap
+    align-self flex-start
+
+  @media (max-width 831px)
+    grid-template-columns 70% min-content
+    justify-content space-between
+    &
+      .Counters
+        margin-bottom .5rem
+      .Counters + .Counters
+        margin-left 0
+    &>div
+      justify-content: center
+
+  @media (max-width 601px)
+    grid-template-columns 1fr
+    grid-gap 1rem
+    &
+      .Counters:not(:first-child)
+        margin-left 2rem
+    &>div
+      justify-content flex-start
+
+.hoverCard
+  transition: all .2s
+  // box-shadow: rgba(45,45,45,0.03) 0 2px 2px, rgba(49,49,49,0.03) 0 4px 4px, rgba(42,42,42,0.03) 0 8px 8px, rgba(32,32,32,0.03) 0 16px 16px, rgba(49,49,49,0.03) 0 32px 32px, rgba(35,35,35,0.03) 0 64px 64px;
+  &:hover
+    // filter: drop-shadow(0 4px 4px #CCC)
+    // transform: translateY(-2px)
+    box-shadow: 0px 9px 28px rgba(17, 48, 121, 0.18);
+
+
+
+.bookmark,
+.my-initiative
+  position: absolute;
+  top: 1.25rem;
+  right: 1.375rem;
+  // circle(32px)
+  // border-radius: 0 1rem;
+  border-radius: 0 1rem 0 .8rem;
+  width: 15px;
+  height: 20px;
+  // background rgba(#000, .3)
+
+  &__idPage
+    circle(32px)
+    background #96baf8
+    cursor pointer
+    filter: drop-shadow(1px 2px 2px #999);
+.bookmark,
+.my-initiative,
+.bookmark__idPage,
+.my-initiative__idPage
+  display flex
+  // &:before
+  //   // .icon-bookmark-outline
+
+  //   // https://icongr.am/material/bookmark-outline.svg?size=24&color=FFFFFF
+  //   content: "\e903";
+  //   color #FFF
+  //   font-size 24px
+  //   font-family: 'icomoon' !important;
+  //   margin auto
+  //   // background url('~assets/sprite/svg/voting-id/bookmark.svg')
+  // &.bookmarked
+  //   background #5085f1
+
+.bookmark
+  margin-top 0.2rem
+  padding 20px
+  position absolute
+  top 10px
+  right 10px
+  opacity: 0.72
+  &:hover
+    opacity 1
+  svg
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+
+.my-initiative,
+.my-initiative__idPage
+  // background #5085f1
+  // &:before
+  //   content: "\e911";
+  //   font-size 20px
+
+
+
+.HeaderPicture
+  &__img
+    display block
+    border-radius: 20px;
+    width 100%
