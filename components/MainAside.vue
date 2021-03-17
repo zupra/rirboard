@@ -15,8 +15,8 @@ nav.MainAside
         .ml-3 {{ It.name }}
     li.mt-3
       N-link.MainAside__link(
-        to="uzly-regulirovaniya"
-      ) узлы регулирования
+        to="sandbox"
+      ) Песочница
 
 
 

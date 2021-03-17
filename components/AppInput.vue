@@ -14,7 +14,7 @@ export default {
       type: String,
       default: () => 'text'
     },
-    id: {
+    inputID: {
       type: String,
       default: () => 'id'
     },
@@ -30,7 +30,7 @@ export default {
   },
   watch: {
     inputValue() {
-      this.$emit('change', {id: this.id, value: this.inputValue})
+      this.$emit('change', {id: this.inputID, value: this.inputValue})
     }
   }
 }

@@ -1,35 +1,37 @@
 <template lang="pug">
-.flex
-  aside.app-main-sidebar-aside.flex.flex-col.justify-between
-    div
-      h1.app-main-sidebar-aside__title Цифровое теплоснабжение
-      MainAside
-    img.rir-aside-logo(src="~/static/icon/rir-logo.svg")
-  main.app-content-part
+.flex.relative
+  .relative.w-64
+    aside.app-main-sidebar-aside
+      div
+        h1.app-main-sidebar-aside__title.px-8 Цифровое теплоснабжение
+        MainAside
+      img.rir-aside-logo.px-8(src="~/static/icon/rir-logo.svg")
+  main.relative.app-content-part.p-8.w-full.z-20
     <nuxt />
 </template>
 
 <script>
+// import MainAside from '~/components/MainAside'
 export default {
   name: 'LikeAdesign',
 }
 </script>
 
+<style lang="postcss" scoped>
+.app-main-sidebar-aside {
+  @apply py-8 flex flex-col justify-between fixed z-10 h-screen
+}
+</style>
+
 <style scoped lang="stylus">
 .rir-aside-logo
-  padding-left: 32px;
-  padding-right: 32px;
   width: 224px;
   height: 40px;
   display: block;
 
 .app-main-sidebar-aside
-  padding-top: 32px;
-  padding-bottom: 32px;
   width 207px
   &__title
-    padding-left: 32px;
-    padding-right: 32px;
     font-style: normal;
     font-weight: 800;
     font-size: 16px;
@@ -37,9 +39,7 @@ export default {
     color: #FFFFFF;
 
 .app-content-part
-  padding 2em
   background: #F6F9FE;
   border-radius: 48px 0px 0px 0px;
-  width 100%
   min-height 100vh
 </style>
