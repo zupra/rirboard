@@ -1,7 +1,7 @@
 <template lang="pug">
 
 nav.MainAside
-  ul.MainAside__ul
+  ul
     li(
       v-for="(It, idx) in links"
       :key="idx"
@@ -10,7 +10,18 @@ nav.MainAside
         :to="It.link"
       )
         img(:src="require(`~/public/aside/${It.img}.svg`)")
-        span(style="margin-left: 13px") {{ It.name }}
+        // TODO отступы 
+        // span(style="margin-left: 13px") {{ It.name }}
+        .ml-3 {{ It.name }}
+
+
+    li.mt-3
+      N-link.MainAside__link(
+        to="uzly-regulirovaniya"
+      ) узлы регулирования
+
+
+        
 </template>
 
 <script>
@@ -56,11 +67,6 @@ export default {
 .MainAside
   margin-top: 40px;
 
-  &__ul
-    margin: 0
-    padding: 0
-
-
   &__link
     font-style: normal;
     font-weight: 500;
@@ -78,6 +84,7 @@ export default {
 
   // ACTIVE LINK
   .nuxt-link-active
+    opacity 1
     background: #04153E
     position relative
   .nuxt-link-exact-active
