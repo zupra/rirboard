@@ -3,7 +3,7 @@ export default {
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  //target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -44,7 +44,7 @@ export default {
     //   ignore: ['**/*.js'],
     // }
   ],
-  
+
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -59,7 +59,7 @@ export default {
     stylus: ['~/assets/_vars.styl'],
   },
   tailwindcss: {
-    jit: true,
+    //jit: true,
     // add '~tailwind.config` alias
     exposeConfig: true
   },
