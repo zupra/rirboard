@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .app-main-sidebar-aside {
   @apply py-8 flex flex-col justify-between fixed z-10 h-screen min-w-min
 }

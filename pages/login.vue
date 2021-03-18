@@ -2,15 +2,15 @@
 .LoginPage
   .Card.toCenter
     a-input(
-      v-model="User.username" 
-      size="large" 
+      v-model="User.username"
+      size="large"
       placeholder="username"
     )
 
     a-input.my-3(
       type="password"
-      v-model="User.password" 
-      size="large" 
+      v-model="User.password"
+      size="large"
       placeholder="password"
     )
 
@@ -54,7 +54,7 @@ export default {
   },
 }
 </script>
-<style lang="stylus" scoped>
+<style lang="stylus">
 .LoginPage
   height: 100vh;
   display: flex

@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .badge {
   @apply inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700;
   &:hover {
@@ -46,5 +46,3 @@ export default {
   }
 }
 </style>
-
-<style lang="stylus" scoped></style>

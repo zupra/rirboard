@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 
 .PreData
   background-color: #FFF //#f4f6f8;
