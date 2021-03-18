@@ -1,25 +1,19 @@
 <template lang="pug">
-
-nav.MainAside
+nav.MainAside.mt-10
   ul
     li(
       v-for="(It, idx) in links"
       :key="idx"
     )
-      N-link.MainAside__link.flex(
+      N-link.MainAside__link.flex.pt-3.pb-3.pl-7(
         :to="It.link"
       )
         img(:src="require(`~/public/aside/${It.img}.svg`)")
-        // TODO: отступы
-        // span(style="margin-left: 13px") {{ It.name }}
         .ml-3 {{ It.name }}
     li.mt-3
       N-link.MainAside__link(
         to="sandbox"
       ) Песочница
-
-
-
 </template>
 
 <script>
@@ -59,31 +53,24 @@ export default {
 }
 </script>
 
-<style scoped lang="stylus">
-
-
+<style lang="stylus">
 .MainAside
-  margin-top: 40px;
-
   &__link
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
     opacity 0.72
-    color: #FFF;
-    padding-top: 12px
-    padding-bottom: 12px
+    color: $clr_amelie;
     padding-left 28px
     &:hover
-      background: #04153E
+      background: $clr_titanic
       opacity: 0.92;
-
-
+      color: $clr_amelie;
   // ACTIVE LINK
   .nuxt-link-active
     opacity 1
-    background: #04153E
+    background: $clr_titanic
     position relative
   .nuxt-link-exact-active
     &:before
@@ -93,5 +80,5 @@ export default {
       top 0
       width 4px
       height 100%
-      background #3D75E4
+      background $clr_rocky
 </style>

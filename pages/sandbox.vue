@@ -152,10 +152,12 @@ div
         placeholder="КПП"
       )
     h2.text-xl.mt-12 Информация об объекте потребления
-    .grid.grid-cols-3
-      .col-span-2
-        p.object-info-description Поля этой группы можно заполнить позже.
-        p.object-info-description При заполнении полей, система будет автоматически рассчитывать рекомендуемые лимиты, согласно
+    .grid.grid-cols-2
+      div
+        p.font-normal.opacity-50.text-base.object-info-description Поля этой группы можно заполнить позже.
+        p.font-normal.opacity-50.text-base.object-info-description При заполнении полей, система будет автоматически
+          |рассчитывать
+          |рекомендуемые лимиты, согласно
           |СНИПам Российской Федерации.
     .grid.grid-cols-2.gap-6
       AppInput(
@@ -210,14 +212,9 @@ export default {
 </script>
 
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .object-info-description
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 24px;
   color: $clr_titanic;
-  opacity: 0.48;
 .checkboxes-container *
   color: $clr_titanic
 </style>
