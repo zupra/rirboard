@@ -31,25 +31,23 @@ export default {
   data() {
     return {
       User: {
-        username: '',
-        password: '',
+        username: 'superadmin@rosatom.dev',
+        password: 'superadmin',
       },
     }
   },
-  computed: {
-    // ...mapGetters(['isAdmin', 'isPublic']),
-  },
   methods: {
-    logIn() {
-      this.$store.commit('logIn', this.User)
-
-      /*
-      if (this.isAdmin || this.isPublic) {
-        this.$router.push('/')
-      } else {
-        this.$toast.error('Ошибка', { duration: 2500 })
+    async logIn() {
+      // this.$store.commit('logIn', this.User)
+      try {
+        const response = await this.$auth.loginWith('local', {
+          data: this.User,
+        })
+        console.log(response)
+      } catch (err) {
+        console.log(err)
       }
-      */
+    
     },
   },
 }

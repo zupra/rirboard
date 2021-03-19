@@ -14,6 +14,11 @@ nav.MainAside.mt-10
       N-link.MainAside__link(
         to="sandbox"
       ) Песочница
+
+    li.mt-4
+      N-link.MainAside__link(
+        to="API"
+      ) Test API
 </template>
 
 <script>

@@ -199,18 +199,17 @@ div
 export default {
   data() {
     return {
-      settings: {}
+      settings: {},
     }
   },
   methods: {
     inputChangeMethod(val) {
       this.settings[val.id] = val.value
       console.log(this.settings)
-    }
-  }
+    },
+  },
 }
 </script>
-
 
 <style lang="stylus">
 .object-info-description

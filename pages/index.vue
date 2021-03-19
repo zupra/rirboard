@@ -13,6 +13,7 @@ div
       span.badge.mr-2 #travel
       span.badge #winter
 
+
   h3.text-3xl.mt-2 Tailwind config:
   pre.bg-gray-200.p-3.rounded {{ tailwindConfig }}
 </template>
@@ -20,16 +21,6 @@ div
 <script>
 import tailwindConfig from '~tailwind.config'
 export default {
-  async asyncData({ $axios }) {
-    const [votingsRes] = await Promise.all([
-      $axios.$get(
-        'https://ag.nn.rusatom.dev/api/votings?per_page=12&sort[updated_at]=desc'
-      ),
-    ])
-    return {
-      listDATA: votingsRes.data,
-    }
-  },
   data() {
     return {
       tailwindConfig,

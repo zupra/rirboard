@@ -1,0 +1,43 @@
+.btn,
+.btn_blue,
+.btn_red,
+.btn_secondary
+  btn()
+
+.btn
+  background $clr_memento
+  color: $clr_godfather //$clr_rocky
+  transition all .35s
+  &:hover
+
+    background $clr_rocky
+    color: #FFF
+
+.btn_blue
+  background $clr_rocky
+  color: #FFF
+  &:hover
+    background lighten($clr_rocky, 15%)
+
+.btn_red
+  background $clr_fargo
+  color: #FFF
+  &:hover
+    background lighten($clr_fargo, 15%)
+
+.btn_secondary
+  background $clr_arrival
+  color $clr_godfather
+  &:hover
+    background #EDF3FC
+    color $clr_godfather
+  &:active
+    background #DBE7FA
+    color $clr_godfather
+
+.btn_link
+  cursor pointer
+  color: $clr_rocky
+  user-select none
+
+
