@@ -14,7 +14,7 @@ div
     )
     button.btn_blue.mt-3(
       type="submit"
-    ) Go
+    ) Получить токен
 
   pre token:{{$storage.getUniversal('api_token') }}
   pre {{auth}}
@@ -23,15 +23,21 @@ div
   .font-bold.text-xl.mb-2 DATA
   pre {{DATA}}
 
-  .btn_blue.mt-3(
-    @click="get_DATA"
-  ) get_DATA
+  .flex
+  .btn_blue(
+    @click="get_DATA('tenant/assetInfos')"
+  ) tenant/assetInfos
 
 
 
 </template>
 
 <script>
+
+
+
+
+
 export default {
   /*
   async asyncData({ $axios }) {
@@ -50,8 +56,19 @@ export default {
         username: 'superadmin@rosatom.dev',
         password: 'superadmin',
       },
+
+      getParams: {
+        pageSize: 10,
+        page: 0,
+        sortProperty: 'createdTime',
+        sortOrder: 'DESC',
+        // type=
+      }
     }
   },
+  // created() {
+  //   this.$storage.removeUniversal('api_token')
+  // },
   methods: {
     async userLogin() {
       /*
@@ -64,23 +81,21 @@ export default {
         console.log(err)
       }
       */
-      this.$storage.removeUniversal('api_token')
+      // this.$storage.removeUniversal('api_token')
       const data = await this.$axios.$post('auth/login', {
-        ...this.login
+        ...this.login,
       })
       this.auth = data
-      this.$storage.setUniversal('api_token', data.token) 
-
+      // this.$storage.setUniversal('api_token', data.token)
     },
-    async get_DATA() {
+    async get_DATA(It = 'asset/types') {
       // const data = await this.$axios.$get(`${this.$config.URL_WHOAMI}`,
-      const data = await this.$axios.$get('asset/types', {
-        params: {},
+      const data = await this.$axios.$get(It, {
+        params: {...this.getParams},
       })
       this.DATA = data
     },
   },
-
 }
 </script>
 

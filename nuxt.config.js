@@ -22,13 +22,15 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'ant-design-vue/dist/antd.css',
+    // '~tailwind.css',
     { src: '~assets/main.styl', lang: 'stylus' },
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/axios',  
-    '@/plugins/antd-ui'
+    '@/plugins/axios',
+    '@/plugins/antd-ui',
+    '~/plugins/notifier.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -74,8 +76,11 @@ export default {
     '@nuxtjs/auth-next',
     // Doc: https://github.com/nuxt-community/universal-storage-module
     '@nuxtjs/universal-storage',
+
+    '@nuxtjs/toast',
   ],
 
+  toast: {},
   // Doc:: https://go.nuxtjs.dev/config-axios
   axios: {
     withCredentials: true,
@@ -85,33 +90,34 @@ export default {
     headers: {
       common: {
         'X-Authorization':
-          'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnbGF6b3ZAcm9zYXRvbS5kZXYiLCJzY29wZXMiOlsiVEVOQU5UX0FETUlOIl0sInVzZXJJZCI6IjFhMDliMGUwLTg3YzItMTFlYi1iNzQ4LTQxMDZiZjBlNDVmOSIsImVuYWJsZWQiOnRydWUsImlzUHVibGljIjpmYWxzZSwidGVuYW50SWQiOiIxOGNiYjJhMC04N2MyLTExZWItYjc0OC00MTA2YmYwZTQ1ZjkiLCJjdXN0b21lcklkIjoiMTM4MTQwMDAtMWRkMi0xMWIyLTgwODAtODA4MDgwODA4MDgwIiwiaXNzIjoidGhpbmdzYm9hcmQuaW8iLCJpYXQiOjE2MTYxMDQyOTUsImV4cCI6MTYxNjExMzI5NX0.h-_av-XjJcXK-S0gNM5viurMNLNOpaiFx58OVZ-Bx7yUSp76eg0Tefuj3HG0vwv35eMrCnPyl5QypTYXmqg0Aw',
+          'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnbGF6b3ZAcm9zYXRvbS5kZXYiLCJzY29wZXMiOlsiVEVOQU5UX0FETUlOIl0sInVzZXJJZCI6IjU5NjZkYjAwLTg4N2ItMTFlYi04OThiLWYxNjI4YzIzNGMzMSIsImVuYWJsZWQiOnRydWUsImlzUHVibGljIjpmYWxzZSwidGVuYW50SWQiOiI1OGQyOGE0MC04ODdiLTExZWItODk4Yi1mMTYyOGMyMzRjMzEiLCJjdXN0b21lcklkIjoiMTM4MTQwMDAtMWRkMi0xMWIyLTgwODAtODA4MDgwODA4MDgwIiwiaXNzIjoidGhpbmdzYm9hcmQuaW8iLCJpYXQiOjE2MTYxMzU1NDMsImV4cCI6MTYxNjE0NDU0M30.OvWYBK5AFOrzULlZVMepAG-wwTm_Cuicda1JQWtfQZ9c2H4_wTIuvEEBdU4IpbY9utofMXLDzdTZoKNCoMFMvg',
       },
     },
     */
   },
 
   // Auth Module for NuxtJS  https://auth.nuxtjs.org/
-  
-  
-  /*
+
+  /**/
   auth: {
     strategies: {
       local: {
         // scheme: 'refresh',
         token: {
           // type: 'Bearer'
-          property: 'data.token',
+          property: 'token',
           // maxAge: 1800,
-          name: 'X-Authorization'
+          name: 'X-Authorization',
         },
-        // refreshToken: {
-        //   property: 'data.refreshToken',
-        //   data: 'refresh_token',
-        //   maxAge: 60 * 60 * 24 * 30,
-        // },
+        /*
+        refreshToken: {
+          property: 'refreshToken',
+          // data: 'refresh_token',
+          maxAge: 60 * 60 * 24 * 30,
+        },
+        */
         user: {
-          autoFetch: false,
+          // autoFetch: false,
           property: 'user',
         },
         endpoints: {
@@ -124,7 +130,6 @@ export default {
       },
     },
   },
-  */
 
   // router: {
   //   middleware: ['auth']

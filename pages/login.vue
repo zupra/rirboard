@@ -22,10 +22,20 @@
       @click="logIn()"
     ) Войти
 
+  //-
+      a-button(
+        block
+        size="large"
+        type="primary"
+        @click="showMessage"
+      ) Войти
+
+
+    Snackbar
+
 </template>
 
 <script>
-// import { mapGetters } from 'vuex'
 export default {
   layout: 'blank',
   data() {
@@ -38,7 +48,6 @@ export default {
   },
   methods: {
     async logIn() {
-      // this.$store.commit('logIn', this.User)
       try {
         const response = await this.$auth.loginWith('local', {
           data: this.User,
@@ -47,8 +56,13 @@ export default {
       } catch (err) {
         console.log(err)
       }
-    
     },
+  },
+  showMessage() {
+    this.$notifier.showMessage({
+      content: 'YAY Our Plugin worked Successfully!',
+      color: 'success',
+    })
   },
 }
 </script>

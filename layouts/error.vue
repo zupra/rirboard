@@ -1,9 +1,11 @@
 <template lang="pug">
-.flex
+.container.flex
   .m_auto.center
     //-
       pre.bold {{error.statusCode}}
       pre {{error.message}}
+
+    pre {{error}}
 
     pre.my-5 {{error.message}}
     N-link.btn_blue.mb-5(
@@ -25,4 +27,11 @@ export default {
 }
 </script>
 
-<style lang="stylus"></style>
+<style lang="stylus">
+
+pre
+  max-width 60vw
+  overflow: hidden;
+  background: #EEE;
+
+</style>
