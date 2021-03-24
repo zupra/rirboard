@@ -1,10 +1,8 @@
 <template lang="pug">
 div
 
-  .text-xl Получить Токен
-  form.mb-6(
-    @submit.prevent="userLogin"
-  )
+  //- .text-xl Получить Токен
+  div
     input(
       v-model="login.username"
       size="28"
@@ -12,11 +10,20 @@ div
     input.mx-3(
       v-model="login.password"
     )
-    button.btn_blue.mt-3(
-      type="submit"
-    ) Получить токен
 
-  pre token:{{$storage.getUniversal('api_token') }}
+    .flex.mt-3
+      button.btn_blue(
+        @click="logIn"
+      ) logIn()
+
+      button.btn_blue.ml-3(
+        @click="userLogin"
+      ) WTF auth/login
+
+  //- pre token:{{$storage.getUniversal('api_token') }}
+  
+  pre {{$auth.loggedIn}}
+  pre {{$auth.user}}
   pre {{auth}}
 
 
@@ -24,20 +31,16 @@ div
   pre {{DATA}}
 
   .flex
+  // 'tenant/assetInfos'
   .btn_blue(
-    @click="get_DATA('tenant/assetInfos')"
-  ) tenant/assetInfos
+    @click="get_DATA('asset/types')"
+  ) get_DATA
 
 
 
 </template>
 
 <script>
-
-
-
-
-
 export default {
   /*
   async asyncData({ $axios }) {
@@ -63,13 +66,27 @@ export default {
         sortProperty: 'createdTime',
         sortOrder: 'DESC',
         // type=
-      }
+      },
     }
   },
   // created() {
   //   this.$storage.removeUniversal('api_token')
   // },
   methods: {
+    async logIn() {
+      // this.$toast.success('toast')
+      try {
+        const response = await this.$auth
+          .loginWith('local', {
+            data: this.login,
+          })
+          .then(() => this.$toast.success('Logged In!'))
+          .catch(() => this.$toast.success('НЕ Logged In!'))
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
+    },
     async userLogin() {
       /*
       try {
@@ -91,7 +108,7 @@ export default {
     async get_DATA(It = 'asset/types') {
       // const data = await this.$axios.$get(`${this.$config.URL_WHOAMI}`,
       const data = await this.$axios.$get(It, {
-        params: {...this.getParams},
+        // params: {...this.getParams},
       })
       this.DATA = data
     },
